@@ -17,7 +17,7 @@ Patient-friendly summarization
 
 🧩 Architecture Overview
 
-<img width="128" height="256" alt="ChatGPT Image Oct 6, 2025, 11_08_56 PM" src="https://github.com/user-attachments/assets/fe712302-7505-4f57-a18d-85c4e3286215" />
+<img width="256" height="256" alt="ChatGPT Image Oct 6, 2025, 11_08_56 PM" src="https://github.com/user-attachments/assets/fe712302-7505-4f57-a18d-85c4e3286215" />
 
 
 
