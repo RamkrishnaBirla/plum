@@ -167,6 +167,10 @@ Tests: ${JSON.stringify(structuredData.tests)}
   }
 });
 
+app.get("/", (req, res)=>{
+  res.send("<h1>Backend is running</h1>");
+})
+
 app.listen(PORT, () =>
   console.log(`🩺 Medical Report Simplifier running on http://localhost:${PORT}`)
 );
