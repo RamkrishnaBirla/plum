@@ -16,33 +16,9 @@ Patient-friendly summarization
 
 
 🧩 Architecture Overview
-Client (Postman / Frontend)
-             │
-             ▼
-┌────────────────────────────┐
-│        Express.js          │
-│  (REST API + Routing)      │
-└────────────┬───────────────┘
-             │
-             ▼
-     ┌────────────────┐
-     │  Tesseract.js  │ ← OCR for image input
-     └────────────────┘
-             │
-             ▼
-     ┌─────────────────────┐
-     │  Gemini Pro Model   │ ← Extract & Normalize tests
-     └─────────────────────┘
-             │
-             ▼
-     ┌─────────────────────┐
-     │ Gemini Flash Model  │ ← Generate summary & explanations
-     └─────────────────────┘
-             │
-             ▼
-     ┌─────────────────────┐
-     │ Structured JSON Out │
-     └─────────────────────┘
+
+<img width="1024" height="1536" alt="ChatGPT Image Oct 6, 2025, 11_08_56 PM" src="https://github.com/user-attachments/assets/fe712302-7505-4f57-a18d-85c4e3286215" />
+
 
 
 ⚙️ Setup Instructions
@@ -90,33 +66,6 @@ curl -X POST http://localhost:3000/api/simplify-report \
   -H "Content-Type: application/json" \
   -d '{"text": "CBC: Hemoglobin 10.2 g/dL (Low), WBC 11,200 /uL (High)"}'
 
-
-✅ Response Example:
-
-{
-  "tests": [
-    {
-      "name": "Hemoglobin",
-      "value": 10.2,
-      "unit": "g/dL",
-      "status": "low",
-      "ref_range": { "low": 12.0, "high": 15.0 }
-    },
-    {
-      "name": "WBC",
-      "value": 11200,
-      "unit": "/uL",
-      "status": "high",
-      "ref_range": { "low": 4000, "high": 10000 }
-    }
-  ],
-  "summary": "Low hemoglobin and high white blood cell count.",
-  "explanations": [
-    "Low hemoglobin may relate to anemia.",
-    "High WBC can occur with infections."
-  ],
-  "status": "ok"
-}
 
 🧪 Option B: Image Upload
 curl -X POST http://localhost:3000/api/simplify-report \
